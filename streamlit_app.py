@@ -28,7 +28,7 @@ streamlit.write('The user entered ', fruit_choice)#accept user input
 
 import requests
 fruitvice_response= requests.get("https://www.fruityvice.com/api/fruit/" + fruit_choice)
-streamlit.text(fruitvice_response.json()) #Just writes data to screen
+#streamlit.text(fruitvice_response.json()) #Just writes data to screen
 
 #Normalise the json data using pandas 
 fruityvice_normalized = pandas.json_normalize(fruitvice_response.json())
