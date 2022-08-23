@@ -25,7 +25,7 @@ fruits_to_show = my_fruit_list.loc[furits_selected]
 #display the table on the page with all the details for only selected fruits.
 streamlit.dataframe(fruits_to_show)
 #import requests
-streamlit.header('Fruitvice fruit advice!')
+streamlit.header('View our Fruit List -- Add your favourities')
 
 def get_fruityvice_data(this_fruit_choice):
      fruitvice_response= requests.get("https://www.fruityvice.com/api/fruit/" + this_fruit_choice)
@@ -54,7 +54,7 @@ def get_fruit_load_list():
           return my_cur.fetchall()
 
 # add a button to extract the data from SF
-if streamlit.button('Get Fruit Load List'):
+if streamlit.button('Get Fruit List'):
      my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
      my_data_rows = get_fruit_load_list()
      my_cnx.close()
